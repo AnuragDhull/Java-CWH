@@ -1,39 +1,30 @@
-package oops.constructors;
+package oops.inheritence;
 
-class Employee3 {
-    int id;
-    String name;
-
-    public Employee3() {
-        // its a constructor
-        // u can pass argument in a constructor also
-        // (String name,int id) like that
-        id = 420;
-        name = "jaat";
+// Superclass: Animal
+class Animal {
+    // Method in the Animal class
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
     }
+}
 
-    public void setName(String n) {
-        this.name = n;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setId(int i) {
-        this.id = i;
-    }
-
-    public int getId() {
-        return id;
+// Subclass: Dog inherits from Animal
+class Dog extends Animal {
+    // Method specific to the Dog class
+    public void bark() {
+        System.out.println("The dog barks.");
     }
 }
 
 public class basics {
     public static void main(String[] args) {
-        Employee3 emp = new Employee3();
+        // Create an instance of Dog
+        Dog dog = new Dog();
 
-        System.out.println(emp.getId());
-        System.out.println(emp.getName());
+        // Call the inherited method from the Animal class
+        dog.makeSound();
+
+        // Call the method from the Dog class
+        dog.bark();
     }
 }
