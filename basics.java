@@ -1,26 +1,30 @@
-abstract class Parent2 {
-    public void meet() {
-        System.out.println("heeeye");
-    }
+package oops.interfaces;
 
-    abstract public void greet();
+interface bicycle {
+    void applyBrake(int decrement);
+
+    void speedup(int increment);
 
 }
 
-class Child2 extends Parent2 {
-    public void greet() {
-        System.out.println("ram ram ji");
+class Avon implements bicycle {
+    int speed = 10;
+
+    public void applyBrake(int decrement) {
+        speed = speed - decrement;
+    }
+
+    public void speedup(int increment) {
+        speed = speed + increment;
     }
 }
 
 public class basics {
     public static void main(String[] args) {
-        Child2 c = new Child2();
+        Avon myBike = new Avon();
+        myBike.speedup(5);
+        myBike.applyBrake(2);
+        System.out.println("Current speed: " + myBike.speed);
 
-        // Parent2 p= new Parent2() ;
-        // abstract class cant be initiated
-
-        c.greet();
-        c.meet();
     }
 }
