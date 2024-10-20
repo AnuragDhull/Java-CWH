@@ -1,32 +1,38 @@
-abstract class pen {
-    abstract public void write();
+package oops.interfaces;
 
-    abstract public void refill();
+class monkey {
+    public void jump() {
+        System.out.println("jumppppp");
+    }
 
+    public void bite() {
+        System.out.println("bittttingggg");
+    }
 }
 
-class fountain extends pen {
-    public void write() {
-        System.out.println("writinggg !!");
+interface basicAnimal {
+    void eat();
+
+    void sleep();
+}
+
+class human extends monkey implements basicAnimal {
+    public void eat() {
+        System.out.println("eatinggg ");
     }
 
-    public void refill() {
-        System.out.println("fillllinggggg");
+    public void sleep() {
+        System.out.println("slepping !!! ");
     }
-
-    public void changeRefill() {
-        System.out.println("changinggg ");
-    }
-
 }
 
 public class practise {
     public static void main(String[] args) {
-        fountain f1 = new fountain();
+        human h1 = new human();
 
-        f1.changeRefill();
-        f1.write();
-        f1.refill();
-
+        h1.eat();
+        h1.sleep();
+        h1.jump();
+        h1.bite();
     }
 }
